@@ -5,23 +5,23 @@
 class Commit < Formula
   desc "Commit is a tool for commiting changes with naming convention"
   homepage "https://github.com/mrados7/homebrews"
-  version "0.0.24"
+  version "0.0.25"
   license "MIT"
 
   depends_on "git"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.24/go-git-commands_0.0.24_darwin_arm64.tar.gz"
-      sha256 "96799156574d4d0ee4f2de27f980f02094d8e3c3901223be155426e6a5626906"
+      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.25/go-git-commands_0.0.25_darwin_arm64.tar.gz"
+      sha256 "816ebcb297bedba511539c8e9251de0929c945c187517b877f36f332dd578fc6"
 
       def install
         bin.install "commit"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.24/go-git-commands_0.0.24_darwin_amd64.tar.gz"
-      sha256 "169275c3e7c0d06b6e9b39527e5db881f03dd1b0142c214c36dfbc21aad62f8d"
+      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.25/go-git-commands_0.0.25_darwin_amd64.tar.gz"
+      sha256 "8c5f02a98077a755297df5d54fadaa0c7653dcbc4bd74a31c50778219b1fbf0c"
 
       def install
         bin.install "commit"
@@ -30,25 +30,25 @@ class Commit < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.24/go-git-commands_0.0.24_linux_arm64.tar.gz"
-      sha256 "509ece5f79af3c97297f6b72091965b0304d85979e3baa8d86d62d96e0157d9a"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.25/go-git-commands_0.0.25_linux_armv6.tar.gz"
+      sha256 "2b806c0e6fd26e7fe46e1137706080af90b18f3a0a264e137e975f8b658cebb4"
 
       def install
         bin.install "commit"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.24/go-git-commands_0.0.24_linux_armv6.tar.gz"
-      sha256 "14306e36c73b040f74ddbc8bde385c1cc75e9d93b56d47c3dcac0c7dbffcc1f5"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.25/go-git-commands_0.0.25_linux_arm64.tar.gz"
+      sha256 "900fe0465de3349e9c7a4ae6f44b3b66b5dc91bc1195bbe39f971547a1d5c15a"
 
       def install
         bin.install "commit"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.24/go-git-commands_0.0.24_linux_amd64.tar.gz"
-      sha256 "4638d57a1282bfcca51f2b1b0e1720aa397114afe0080c929a93af8c00446260"
+      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.25/go-git-commands_0.0.25_linux_amd64.tar.gz"
+      sha256 "343327e862213c53ae7d8592a3f3360f0b55ed2a5ab50fe70c8b0d8c03d5f23c"
 
       def install
         bin.install "commit"
