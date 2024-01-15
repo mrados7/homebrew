@@ -5,23 +5,23 @@
 class Checkout < Formula
   desc "Checkout is a tool for checking out new git branch with naming convention"
   homepage "https://github.com/mrados7/homebrews"
-  version "0.0.25"
+  version "0.0.26"
   license "MIT"
 
   depends_on "git"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.25/go-git-commands_0.0.25_darwin_arm64.tar.gz"
-      sha256 "816ebcb297bedba511539c8e9251de0929c945c187517b877f36f332dd578fc6"
+      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.26/go-git-commands_0.0.26_darwin_arm64.tar.gz"
+      sha256 "8f8fbae46f95194e28f1ea46270b732919b1e2529e9e9edfc2bfac5e8802542a"
 
       def install
         bin.install "checkout"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.25/go-git-commands_0.0.25_darwin_amd64.tar.gz"
-      sha256 "8c5f02a98077a755297df5d54fadaa0c7653dcbc4bd74a31c50778219b1fbf0c"
+      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.26/go-git-commands_0.0.26_darwin_amd64.tar.gz"
+      sha256 "129f051b1dc82d1442823cd8b3b9734b0cad5d08e034ab5ecff5c99b7ad4da0d"
 
       def install
         bin.install "checkout"
@@ -30,25 +30,25 @@ class Checkout < Formula
   end
 
   on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.26/go-git-commands_0.0.26_linux_amd64.tar.gz"
+      sha256 "d7527bc93eb36754200d01fc2f54930e3debc882acd6409bc733c6c93c966d54"
+
+      def install
+        bin.install "checkout"
+      end
+    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.25/go-git-commands_0.0.25_linux_armv6.tar.gz"
-      sha256 "2b806c0e6fd26e7fe46e1137706080af90b18f3a0a264e137e975f8b658cebb4"
+      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.26/go-git-commands_0.0.26_linux_armv6.tar.gz"
+      sha256 "e7f31f868462cb1603902b492a61a28324fe89a4c4db9a239cb554a88078cb9a"
 
       def install
         bin.install "checkout"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.25/go-git-commands_0.0.25_linux_arm64.tar.gz"
-      sha256 "900fe0465de3349e9c7a4ae6f44b3b66b5dc91bc1195bbe39f971547a1d5c15a"
-
-      def install
-        bin.install "checkout"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.25/go-git-commands_0.0.25_linux_amd64.tar.gz"
-      sha256 "343327e862213c53ae7d8592a3f3360f0b55ed2a5ab50fe70c8b0d8c03d5f23c"
+      url "https://github.com/mrados7/go-git-commands/releases/download/v0.0.26/go-git-commands_0.0.26_linux_arm64.tar.gz"
+      sha256 "ec01e52991864f2d267e334a821b159994daca0e41e87753802efdec66b1bcbf"
 
       def install
         bin.install "checkout"
